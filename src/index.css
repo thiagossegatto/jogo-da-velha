@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  background: #ccc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  display: flex;
+  background: #333;
+  padding: 10px 0;
+}
+header .player {
+  display: flex;
+  margin-left: 20px;
+}
+header .player .mark {
+  background: #fff;
+  padding: 10px;
+  text-align: center;
+}
+header .player .mark svg {
+  display: flex;
+  margin-top: 5px;
+}
+header .player .winners {
+  background: #ccc;
+  padding: 10px;
+  text-align: center;
+  color: #333;
+}
+header .player input {
+  background: #fff;
+  padding: 10px;
+  text-indent: 10px;
+  border: none;
+  border-right: 1px solid #333;
+}
+header .logo {
+  color: #fff;
+  font-size: 30px;
+  margin: 10px 0 0 20px;
+}
+
+.table {
+  display: flex;
+}
+.table .gameAll {
+  padding: 20px;
+  width: 190px;
+}
+.table .game {
+  display: flex;
+  flex-flow: row wrap;
+  width: 190px;
+}
+.table .game .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border: none;
+}
+.table .game .box:nth-child(5) {
+  border: 1px solid #fff;
+}
+.table .game .box:nth-child(4),
+.table .game .box:nth-child(6) {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+.table .game .box:nth-child(1),
+.table .game .box:nth-child(7) {
+  border-right: 1px solid #fff;
+}
+.table .game .box:nth-child(3),
+.table .game .box:nth-child(9) {
+  border-left: 1px solid #fff;
+}
+.table .game .box:hover {
+  background: #999;
+}
