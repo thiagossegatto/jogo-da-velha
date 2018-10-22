@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
   box-sizing: border-box;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   background: #ccc;
@@ -9,6 +10,7 @@ body {
 }
 
 header {
+  width: 100%;
   display: flex;
   background: #333;
   padding: 10px 0;
@@ -28,7 +30,7 @@ header .player .mark svg {
 }
 header .player .winners {
   background: #ccc;
-  padding: 10px;
+  padding: 15px 20px;
   text-align: center;
   color: #333;
 }
@@ -46,9 +48,13 @@ header .logo {
 }
 
 .table {
+  width: 100%;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .table .gameAll {
+  width: 100%;
   padding: 20px;
   width: 190px;
 }
@@ -85,4 +91,31 @@ header .logo {
 }
 .table .game .box:hover {
   background: #999;
+}
+.newGame .game{
+  border: 1px solid #333;
+  height: 182px;
+  margin-top: 80px;
+}
+.newGame .game button{
+  width: 100%;
+}
+
+.memoria .game, .memoria{
+  width: 100% !important;
+}
+
+.memoria .cards{
+  background: #999;
+  border: 1px solid #333;
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.memoria .cards svg{
+  width: 60px;
+  height: 60px;
 }

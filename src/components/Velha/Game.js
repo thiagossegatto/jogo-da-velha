@@ -1,11 +1,13 @@
 import React from "react";
+import { FaRegCircle, FaTimes } from "react-icons/fa";
 
-import Row from "./row";
+import Row from "./Row";
 
 const Game = props => {
   return (
     <div className="gameAll">
       <h3>{props.game.name}</h3>
+      <span>Próximo: {props.game.initMark?<FaTimes/>:<FaRegCircle/>}</span>
       <div className="game">
         {props.game.rows.map(row => (
           <Row
