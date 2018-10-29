@@ -1,6 +1,9 @@
-body {
-  margin: 0;
+*{
   padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body {
   width: 100%;
   box-sizing: border-box;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -118,4 +121,56 @@ header .logo {
 .memoria .cards svg{
   width: 60px;
   height: 60px;
+}
+
+.word ul, .types ul{
+  display: flex;
+}
+.word li, .types li{
+  display: flex;
+  width: 60px;
+  height: 60px;
+  background: #333;
+  margin-left: 10px;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-size: 40px;  
+}
+
+.body{
+  position: relative;
+  margin-top: 20px;
+  display: flex;
+  width: 290px;
+  height: 340px;
+  background: url(img/forca.png);
+}
+.body > div{
+  display: flex;
+  position: absolute;
+}
+.body .cabeca{
+  top: 45px;
+  right: 62px;
+}
+.body .corpo{
+  top: 126px;
+  right: 100px;
+}
+.body .bracoEsquerdo{
+  top: 126px;
+  right: 107px;
+}
+.body .bracoDireito{
+  top: 126px;
+  right: 17px;
+}
+.body .pernaEsquerda{
+  top: 206px;
+  right: 107px;
+}
+.body .pernaDireita{
+  top: 206px;
+  right: 17px;
 }

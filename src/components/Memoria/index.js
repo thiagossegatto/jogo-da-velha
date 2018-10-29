@@ -20,7 +20,10 @@ class Memoria extends Component {
     { opacity: 1, name: "bell", status: false, icon: <all.FaBell /> },
     { opacity: 1, name: "cut", status: false, icon: <all.FaCut /> },
     { opacity: 1, name: "flask", status: false, icon: <all.FaFlask /> },
-    { opacity: 1, name: "laptop", status: false, icon: <all.FaLaptop /> }
+    { opacity: 1, name: "laptop", status: false, icon: <all.FaLaptop /> },
+    { opacity: 1, name: "ambulance", status: false, icon: <all.FaAmbulance /> },
+    { opacity: 1, name: "angry", status: false, icon: <all.FaAngry /> },
+    { opacity: 1, name: "slack", status: false, icon: <all.FaSlack /> }
   ];
 
   initGame = {
@@ -30,21 +33,23 @@ class Memoria extends Component {
     cards: []
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    this.setState(this.initGame)
-    var cards = this.listCards
+  handleNewGame = (modo) => {
+    this.setState(this.initGame);
+
+    var list = this.listCards
       .map(card => {
         return [card, card];
       })
-      .reduce(function(cards, b) {
-        return cards.concat(b);
+      .reduce(function(car, b) {
+        return car.concat(b);
       });
+
+    var cards = list.slice(0,modo*2);
 
     cards.sort(function() {
       return 0.5 - Math.random();
     });
-    //cards = this.listCards.splice(6);
+
     this.setState({ cards: cards });
 
     setTimeout(() => {
@@ -59,6 +64,8 @@ class Memoria extends Component {
     var { pares, cards, acertos, errors } = this.state;
 
     if (cards[id].status) return false;
+
+    clearTimeout();
 
     cards.map((c, index) => {
       if (index === id) {
@@ -96,10 +103,9 @@ class Memoria extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input type="number" placeholder="Quantos Pares?" value="6" />
-          <button>NEW GAME</button>
-        </form>
+          <button onClick={() => this.handleNewGame(6)}>Easy</button>
+          <button onClick={() => this.handleNewGame(10)}>Medium</button>
+          <button onClick={() => this.handleNewGame(14)}>Hard</button>
         {this.state.cards.length > 0 ? (
           <Table
             cards={this.state.cards}
